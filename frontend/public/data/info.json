@@ -1,0 +1,50 @@
+{
+  "moduleInfo": {
+    "name": "信息管理",
+    "code": "info",
+    "desc": "提供产品信息填报、修改、删除等功能"
+  },
+  "entitys": [
+    {
+      "name": "产品信息",
+      "code": "productInfo"
+    }
+  ],
+  "valueObjet": [
+    {
+      "name": "产品类型",
+      "code": "productType"
+    }
+  ],
+  "productInfo": [
+    {
+      "name": "产品信息编号",
+      "code": "productCode",
+      "type": "文本",
+      "address": "必要字段，产品信息的唯一标识",
+      "isNecessary": true
+    },
+    {
+      "name": "产品名称",
+      "code": "name",
+      "type": "文本",
+      "address": "-",
+      "isNecessary": false
+    },
+    {
+      "name": "产品规格",
+      "code": "specification",
+      "type": "文本",
+      "address": "-",
+      "isNecessary": false
+    },
+    {
+      "name": "产品类型",
+      "code": "type",
+      "type": "文本",
+      "address": "-",
+      "isNecessary": false
+    }
+  ],
+  "productType": []
+}

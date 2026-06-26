@@ -1,0 +1,8 @@
+#!/usr/bin/expect -f
+set password "littleprinceB612"
+
+spawn sudo -S /opt/src/github.com/hyperledger/fabric/scripts/bin/configtxgen -configPath {0} -channelID {1} -profile {2} -outputBlock {3}
+expect "Password:"
+send "$password\r"
+interact
+

@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  # 添加
+
+  cli:
+    container_name: cli
+    image: hyperledger/fabric-tools:latest
+    volumes:
+      - ./docker/peercfg:/etc/hyperledger/peercfg

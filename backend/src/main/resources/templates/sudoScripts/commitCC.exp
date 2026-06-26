@@ -1,0 +1,8 @@
+#!/usr/bin/expect -f
+set password "littleprinceB612"
+
+spawn sudo -S /opt/src/github.com/hyperledger/fabric/scripts/bin/peer lifecycle chaincode commit -o orderer.example.com:7050 --channelID {0} --name {1} --version 1.0 --sequence 1 --init-required --tls --cafile $ORDERER_CA --peerAddresses peer0.org1.example.com:7051 --peerAddresses peer0.org2.example.com:9051
+expect "Password:"
+send "$password\r"
+expect eof
+interact

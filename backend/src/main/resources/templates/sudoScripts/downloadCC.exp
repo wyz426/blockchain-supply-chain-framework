@@ -1,0 +1,12 @@
+#!/usr/bin/expect -f
+set password "littleprinceB612"
+
+spawn sudo -S go env -w GOPROXY=https://goproxy.cn,direct
+expect "Password:"
+send "$password\r"
+expect eof
+spawn sudo -S go mod vendor
+expect "Password:"
+send "$password\r"
+expect eof
+interact

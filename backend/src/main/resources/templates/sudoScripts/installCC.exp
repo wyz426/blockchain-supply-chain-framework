@@ -1,0 +1,8 @@
+#!/usr/bin/expect -f
+set password "littleprinceB612"
+
+spawn sudo -S /opt/src/github.com/hyperledger/fabric/scripts/bin/peer lifecycle chaincode install ../{0}.tar.gz
+expect "Password:"
+send "$password\r"
+expect eof
+interact

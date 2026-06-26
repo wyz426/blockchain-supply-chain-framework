@@ -1,0 +1,28 @@
+#!/usr/bin/expect -f
+set password "littleprinceB612"
+
+spawn sudo docker-compose -f compose/compose-test-net.yaml -f compose/docker/docker-compose-test-net.yaml up -d
+expect "Password:"
+send "$password\r"
+expect eof
+spawn sudo docker ps -a
+expect "Password:"
+send "$password\r"
+expect eof
+spawn sudo cp /home/lan/blc-scm-pass-backend/src/main/resources/templates/core.yaml /home/lan/network/org1/compose/docker/peercfg
+expect "Password:"
+send "$password\r"
+expect eof
+spawn sudo docker-compose -f compose/compose-test-net.yaml -f compose/docker/docker-compose-test-net.yaml down
+expect "Password:"
+send "$password\r"
+expect eof
+spawn sudo docker-compose -f compose/compose-test-net.yaml -f compose/docker/docker-compose-test-net.yaml up -d
+expect "Password:"
+send "$password\r"
+expect eof
+spawn sudo docker ps -a
+expect "Password:"
+send "$password\r"
+expect eof
+interact

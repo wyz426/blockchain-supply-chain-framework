@@ -1,0 +1,16 @@
+#!/usr/bin/expect -f
+set password "littleprinceB612"
+set package_id ""
+
+spawn sudo -S /opt/src/github.com/hyperledger/fabric/scripts/bin/peer lifecycle chaincode queryinstalled --peerAddresses peer0.org1.example.com:7051
+expect "Password:"
+send "$password\r"
+expect -re "Package ID: ([^\n]+)," {
+    set package_id $expect_out(1,string)
+}
+expect eof
+spawn sudo -S /opt/src/github.com/hyperledger/fabric/scripts/bin/peer lifecycle chaincode approveformyorg -o orderer.example.com:7050 --tls --cafile ../{0}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt --channelID {1} --name {2} --version 1.0 --package-id $package_id --sequence 1
+expect "Password:"
+send "$password\r"
+expect eof
+interact

@@ -1,0 +1,13 @@
+#!/usr/bin/expect -f
+set password "littleprinceB612"
+
+spawn sudo docker-compose -f compose/compose-test-net.yaml -f compose/docker/docker-compose-test-net.yaml up -d
+
+expect "Password:"
+send "$password\r"
+expect eof
+spawn sudo docker ps -a
+expect "Password:"
+send "$password\r"
+expect eof
+interact

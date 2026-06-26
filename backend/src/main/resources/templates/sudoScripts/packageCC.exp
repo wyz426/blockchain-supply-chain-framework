@@ -1,0 +1,8 @@
+#!/usr/bin/expect -f
+set password "littleprinceB612"
+
+spawn sudo -S /opt/src/github.com/hyperledger/fabric/scripts/bin/peer lifecycle chaincode package ../chaincode/{0}.tar.gz --path ../chaincode/chaincode-go/ --lang golang --label cc_1.0
+expect "Password:"
+send "$password\r"
+expect eof
+interact

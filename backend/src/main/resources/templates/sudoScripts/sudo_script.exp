@@ -1,0 +1,11 @@
+#!/usr/bin/expect -f
+set password "littleprinceB612"
+
+spawn sudo -S /opt/src/github.com/hyperledger/fabric/scripts/bin/configtxgen -configPath /home/lan/network/org1/configtx -channelID testchainid -profile TwoOrgsOrdererGenesis -outputBlock genesis.block
+expect "Password:"
+send "$password\r"
+#expect eof
+
+#spawn mv orderer.genesis.block /home/lan/network/
+#expect eof
+interact

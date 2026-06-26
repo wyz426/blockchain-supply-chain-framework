@@ -1,0 +1,13 @@
+#!/usr/bin/expect -f
+set password "littleprinceB612"
+
+spawn sudo -S /opt/src/github.com/hyperledger/fabric/scripts/bin/osnadmin channel join --channelID {0} --config-block {1} -o orderer.example.com:7053 --ca-file "{2}" --client-cert "{3}" --client-key "{4}"
+expect "Password:"
+send "$password\r"
+expect eof
+spawn sudo -S /opt/src/github.com/hyperledger/fabric/scripts/bin/osnadmin channel list -o orderer.example.com:7053 --ca-file "{5}" --client-cert "{6}" --client-key "{7}"
+expect "Password:"
+send "$password\r"
+expect eof
+interact
+
