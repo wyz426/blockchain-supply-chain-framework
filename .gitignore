@@ -134,3 +134,32 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Backend build and IDE files
+backend/target/
+backend/.idea/
+backend/*.iml
+.idea/
+*.iml
+
+# OS-generated files
+.DS_Store
+__MACOSX/
+
+# Local configuration and runtime outputs
+backend/src/main/resources/application-local.yml
+backend/runtime/
+runtime/
+networks/
+crypto-config/
+
+# Fabric keys, certificates, and generated artifacts
+**/*_sk
+**/keystore/
+**/signcerts/
+**/tlscacerts/
+**/tlskecerts/
+*.block
+
+# Logs
+*.log
