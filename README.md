@@ -74,21 +74,3 @@ backend/sql/
 ```
 
 Create a local MySQL database and import the required schema scripts before starting the backend service.
-
-## Repository Scope
-
-This repository currently provides:
-
-* Frontend and backend prototype source code
-* Database schema scripts
-* Hyperledger Fabric templates and deployment-related resources
-
-The following materials are intentionally excluded:
-
-* Fabric private keys, certificates, and local runtime networks
-* Cloud access credentials and database passwords
-* Generated blockchain artifacts and runtime logs
-* Case-study datasets and full experimental replication materials
-
-This repository is a research prototype. It does not yet provide a one-command environment setup or a complete experiment-replication package.
-
