@@ -2,23 +2,20 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/blc_pass?useSSL=false&characterEncoding=utf8&serverTimezone=GMT
-    username: root
-    password: password
+    username: DB_USERNAME
+    password: DB_PASSWORD
 #  rabbitmq:
 #    host: localhost
-#    #客户端的端口
 #    port: 5672
-#    #密码
 #    password: password
-#    #账号
 #    username: admin
 
 network:
   resource:
-    url: /Users/zerohuang/blc/networks
+    url: NETWORK_RESOURCE_DIR:./runtime/networks
 
 aliyun:
   oss:
-    accesskey:
-    secretkey:
-    endpoint: http://oss-cn-shanghai.aliyuncs.com
+    accesskey: ${ALIYUN_OSS_ACCESS_KEY:}
+    secretkey: ${ALIYUN_OSS_SECRET_KEY:}
+    endpoint: ${ALIYUN_OSS_ENDPOINT:}
