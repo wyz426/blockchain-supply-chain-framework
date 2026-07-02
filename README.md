@@ -23,6 +23,9 @@ blockchain-supply-chain-framework/
 ├── backend/                  # Spring Boot backend
 │   ├── sql/                  # Database schema scripts
 │   └── src/main/resources/   # Fabric templates and deployment resources
+├── artifacts/
+│   └── literature_dataset/
+│       └── Review_Literature_List.xlsx
 ├── README.md
 └── .gitignore
 ```
@@ -74,3 +77,13 @@ backend/sql/
 ```
 
 Create a local MySQL database and import the required schema scripts before starting the backend service.
+
+
+## Literature Dataset
+
+The repository includes a structured literature coding dataset used in the study.
+
+Location:
+`/artifacts/literature_dataset/Review_Literature_List_v4.xlsx`
+
+This dataset was manually extracted from selected peer-reviewed studies and normalized to ensure consistency across heterogeneous sources.
